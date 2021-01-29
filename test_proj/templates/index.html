@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block index %}
+{% comment %} Form Control {% endcomment %}
+<div class='container'>
+<form action="/analyze" method="post"> {% csrf_token %}
+  <!-- csrf for using POST method CSRF-- Cross Site Request Forgery-->
+<div class="mb-3 my-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+  <textarea name='text' class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+</div>
+{% comment %} switches {% endcomment %}
+<div class="form-check  form-check-inline form-switch mb-3">
+  <input name='puncswitch' class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+  <label class="form-check-label" for="flexSwitchCheckDefault">Remove Punctuations</label>
+</div>
+<div class="form-check form-check-inline form-switch  mb-3">
+  <input name='capswitch' class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+  <label class="form-check-label" for="flexSwitchCheckDefault">Full Caps</label>
+</div>
+<div class="form-check form-check-inline form-switch mb-3">
+  <input name='lineswitch' class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+  <label class="form-check-label" for="flexSwitchCheckDefault">Remove NewLines</label>
+</div>
+<div class="form-check form-check-inline form-switch mb-3">
+  <input name='spaceswitch' class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+  <label class="form-check-label" for="flexSwitchCheckDefault">Extra Space Remover</label>
+</div>
+<div class="form-check  form-check-inline form-switch mb-3">
+  <input name='countswitch' class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+  <label class="form-check-label" for="flexSwitchCheckDefault">Character Counter</label>
+</div>
+<button type="submit" class="btn btn-outline-dark">submit</button>
+</form>
+</div>
+{% endblock  %}
+

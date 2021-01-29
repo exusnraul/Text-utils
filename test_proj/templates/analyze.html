@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block analyze %}
+<div class='container my-4'>
+<h1>
+ Your Text Is analyzed with {{ purpose}} {{ err1}}</h1>
+<p>
+<h2>Analyzed Text is:</h2><pre> {{ analyzed_text}} {{ analyzed_text_count}}  {{ err2}}</pre>
+</p>
+
+</div>
+{% comment %} {% lorem 9 b random %} {% endcomment %}
+
+
+{% endblock  %}
